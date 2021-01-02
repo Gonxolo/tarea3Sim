@@ -42,6 +42,44 @@ def createAxis(length=1.0):
     return Shape(vertices, indices)
 
 
+def createBox(length=1.0):
+
+    # Defining the location and colors of each vertex  of the shape
+    vertices = [
+    #    positions                 colors
+        -length,  -length,  -length, 0.0, 0.0, 0.0,
+        -length,  -length,   length, 0.0, 0.0, 0.0,
+
+        -length,   length,  -length, 0.0, 0.0, 0.0,
+        -length,   length,   length, 0.0, 0.0, 0.0,
+
+         length,  -length,  -length, 0.0, 0.0, 0.0,
+         length,  -length,   length, 0.0, 0.0, 0.0,
+
+         length,   length,  -length, 0.0, 0.0, 0.0,
+         length,   length,   length, 0.0, 0.0, 0.0,
+         ]
+
+    # This shape is meant to be drawn with GL_LINES,
+    # i.e. every 2 indices, we have 1 line.
+    indices = [
+         0, 1,
+         2, 3,
+         4, 5,
+         6, 7,
+         0, 2,
+         1, 3,
+         4, 6,
+         5, 7,
+         0, 4,
+         1, 5,
+         2, 6,
+         3, 7
+        ]
+
+    return Shape(vertices, indices)
+
+
 def createRainbowTriangle():
 
     # Defining the location and colors of each vertex  of the shape
